@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { CriarFuncionarioComponent } from './criar-funcionario/criar-funcionario.component';
 import { DetalheFuncionarioComponent } from './detalhe-funcionario/detalhe-funcionario.component';
 import { ListaFuncionarioComponent } from './lista-funcionario/lista-funcionario.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AtualizarFuncionarioComponent } from './atualizar-funcionario/atualizar-funcionario.component';
 import {AppRoutingModule} from './app.routing.module';
+import { LoginComponent } from './login/login.component';
+import {HttpInterceptorService} from './login/auth/HttpInterceptorService';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import {AppRoutingModule} from './app.routing.module';
     CriarFuncionarioComponent,
     DetalheFuncionarioComponent,
     ListaFuncionarioComponent,
-    AtualizarFuncionarioComponent
+    AtualizarFuncionarioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,13 @@ import {AppRoutingModule} from './app.routing.module';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

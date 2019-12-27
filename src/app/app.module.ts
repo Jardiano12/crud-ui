@@ -11,6 +11,7 @@ import { AtualizarFuncionarioComponent } from './atualizar-funcionario/atualizar
 import {AppRoutingModule} from './app.routing.module';
 import { LoginComponent } from './login/login.component';
 import {HttpInterceptorService} from './login/auth/HttpInterceptorService';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpInterceptorService} from './login/auth/HttpInterceptorService';
     DetalheFuncionarioComponent,
     ListaFuncionarioComponent,
     AtualizarFuncionarioComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

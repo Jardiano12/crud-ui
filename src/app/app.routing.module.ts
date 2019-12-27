@@ -9,7 +9,7 @@ import {LoginComponent} from './login/login.component';
 const routes: Routes = [
   /*{ path: '', redirectTo: 'funcionario', pathMatch: 'full' },*/
   {path: 'login', component: LoginComponent},
-  {path: '', component: LoginComponent},
+  {path: '',  redirectTo: 'login',  pathMatch: 'full' },
   { path: 'funcionario', component: ListaFuncionarioComponent },
   { path: 'adicionar', component: CriarFuncionarioComponent },
   { path: 'atualizar/:id', component: AtualizarFuncionarioComponent },

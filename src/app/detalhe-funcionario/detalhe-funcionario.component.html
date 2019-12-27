@@ -1,0 +1,18 @@
+<h2>Detalhes</h2>
+
+<hr/>
+<div *ngIf="employee">
+  <div>
+    <label><b>Primeiro nome: </b></label> {{employee.primeiroNome}}
+  </div>
+  <div>
+    <label><b>Último nome: </b></label> {{employee.ultimoNome}}
+  </div>
+  <div>
+    <label><b>E-mail Id: </b></label> {{employee.emailId}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar à lista de funcionários</button><br>
